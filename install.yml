@@ -1,0 +1,38 @@
+---
+- name: Install DevOps Tools
+  hosts: localhost
+  become: yes
+
+  tasks:
+
+    - name: Remove conflicting containerd
+      apt:
+        name:
+          - containerd
+          - containerd.io
+        state: absent
+
+    - name: Update apt
+      apt:
+        update_cache: yes
+
+    - name: Install Docker
+      apt:
+        name: docker.io
+        state: present
+
+    - name: Start Docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
+    - name: Install Java 17
+      apt:
+        name: openjdk-17-jdk
+        state: present
+
+    - name: Install Maven
+      apt:
+        name: maven
+        state: present
