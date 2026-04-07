@@ -31,3 +31,16 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Terraform
+.terraform/
+*.tfstate
+
+# Binaries
+minikube-linux-amd64
+
+# Build
+target/
+
+# OS
+*.log
