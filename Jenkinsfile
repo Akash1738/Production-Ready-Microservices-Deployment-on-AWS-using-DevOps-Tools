@@ -18,8 +18,8 @@ pipeline {
         }
         stage('Push to DockerHub') {
             steps {
-                sh 'docker tag myapp username/myapp'
-                sh 'docker push username/myapp'
+                sh 'docker tag myapp akash1738/myapp'
+                sh 'docker push akash1738/myapp'
             }
         }
     }
